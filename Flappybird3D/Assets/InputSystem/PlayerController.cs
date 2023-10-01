@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _jump;
     [SerializeField] private float _force;
     [SerializeField] private Rigidbody _rb;
+    [SerializeField] private RoadSpawner Roadspawner;
     private PlayerInputControls _input;
 
     private void Awake()
@@ -42,5 +43,9 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         _input.Disable();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Roadspawner.Spawner();
     }
 }
