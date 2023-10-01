@@ -448,7 +448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456812436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.87, y: 4.1835074, z: 0.17165136}
+  m_LocalPosition: {x: 5.51, y: 4.1835074, z: 0.17165136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -646,6 +646,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5767475427015809659, guid: 0fae29fb912e6a64e914f78804fbe04d,
+        type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5767475427015809662, guid: 0fae29fb912e6a64e914f78804fbe04d,
         type: 3}
       propertyPath: m_Name
@@ -758,6 +763,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3312388694487978248, guid: 5825ee15e2e96244f93083c4da7b8c81,
+        type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3312388694487978249, guid: 5825ee15e2e96244f93083c4da7b8c81,
         type: 3}
       propertyPath: m_RootOrder
@@ -882,6 +892,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5767475427015809659, guid: 0fae29fb912e6a64e914f78804fbe04d,
+        type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5767475427015809662, guid: 0fae29fb912e6a64e914f78804fbe04d,
         type: 3}
       propertyPath: m_Name
@@ -896,6 +911,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8128423743335900464, guid: eab22d37b0c0d5a44ab9559a77fcf7d0,
+        type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8128423743335900465, guid: eab22d37b0c0d5a44ab9559a77fcf7d0,
         type: 3}
       propertyPath: m_RootOrder
