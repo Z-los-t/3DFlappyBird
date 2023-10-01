@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Controls")]
     [SerializeField] private float _jump;
     [SerializeField] private float _force;
     [SerializeField] private Rigidbody _rb;
-    [SerializeField] private RoadSpawner Roadspawner;
+    [Header("PlayerInput")]
     private PlayerInputControls _input;
+    [Header("SpawnerScript")]
+    [SerializeField] private RoadSpawner Roadspawner;
 
     private void Awake()
     {
@@ -44,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         _input.Disable();
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         Roadspawner.Spawner();
     }
