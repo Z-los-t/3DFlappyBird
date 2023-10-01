@@ -7,11 +7,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _jump;
     [SerializeField] private float _force;
     [SerializeField] private Rigidbody _rb;
-    private PlayerControls _input;
+    private PlayerInputControls _input;
 
     private void Awake()
     {
-        _input = new PlayerControls();
+        _input = new PlayerInputControls();
         _input.ActionMap.Jump.performed += context => Jump();
     }
     private void Start()
