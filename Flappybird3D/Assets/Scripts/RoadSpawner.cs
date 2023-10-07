@@ -7,7 +7,7 @@ public class RoadSpawner : MonoBehaviour
     [SerializeField] private GameObject _pipe;
     private void Start()
     {
-        InvokeRepeating("PipeSpawner", 2, 1);
+       //InvokeRepeating("PipeSpawner", 2, 1);
     }
     public void Spawner()
     {
