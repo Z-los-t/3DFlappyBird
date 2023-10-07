@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private PlayerInputControls _input;
     [Header("SpawnerScript")]
     [SerializeField] private RoadSpawner Roadspawner;
+    [Header("Bird")]
+    [SerializeField] private GameObject _frightenedeyes;
+    [SerializeField] private GameObject _eyes;
 
     float rotation;
     private void Awake()
@@ -55,5 +58,11 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Roadspawner.Spawner();
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        _frightenedeyes.SetActive(true);
+        _eyes.SetActive(false);
+        Time.timeScale = 0;
     }
 }
