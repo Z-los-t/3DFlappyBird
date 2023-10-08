@@ -22,9 +22,9 @@ public class CloudSpawner : MonoBehaviour
             Debug.Log("spawn2");
             Vector3 randomPoint = Random.insideUnitSphere * _radious;
             GameObject Cloud = Instantiate(_cloud, randomPoint + transform.position, Quaternion.identity);
-            float RandomHeight = Random.RandomRange(3, 4);
-            float RandomWith = Random.RandomRange(1, 3);
-            Cloud.transform.localScale = new Vector3(RandomHeight/RandomWith, RandomWith, RandomWith);
+            //float RandomHeight = Random.RandomRange(3, 4);
+            //float RandomWith = Random.RandomRange(1, 3);
+           //Cloud.transform.localScale = new Vector3(RandomHeight/RandomWith, RandomWith, RandomWith);
         }
     }
 }
