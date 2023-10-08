@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Controls")]
     [SerializeField] private float _jump;
+    [SerializeField] private float _speed;
     [SerializeField] private float _rotationSpeed;
-    [SerializeField] private float _force;
+    [SerializeField] private float _jumpSpeed;
+    [SerializeField] private GameObject _camera;
     [SerializeField] private Rigidbody _rb;
     [Header("PlayerInput")]
     private PlayerInputControls _input;
@@ -30,9 +32,8 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         JumpForceContol();
-        rotation = _rb.velocity.y * _rotationSpeed;
-        rotation = Mathf.Clamp(rotation, -90, 50);
-        transform.rotation = Quaternion.Euler(0, 0, rotation);   
+        PlayerMovement();
+        CameraTranslate();
     }
     private void Jump()
     {
@@ -40,12 +41,24 @@ public class PlayerController : MonoBehaviour
         _rb.velocity = Vector3.zero;    
         _rb.velocity = Vector2.up * _jump;
     }
+    private void PlayerMovement()
+    {
+        transform.position += new Vector3(_speed * Time.fixedDeltaTime, 0, 0);
+        rotation = _rb.velocity.y * _rotationSpeed;
+        rotation = Mathf.Clamp(rotation, -90, 50);
+        transform.rotation = Quaternion.Euler(0, 0, rotation);
+    }
     private void JumpForceContol()
     {
-        if(_rb.velocity.y > _force)
+        if(_rb.velocity.y > _jumpSpeed)
         {
-            _rb.velocity = new Vector3(0, _force, 0);
+            _rb.velocity = new Vector3(0, _jumpSpeed, 0);
         }
+    }
+    private void CameraTranslate()
+    {
+        _camera.transform.position += new Vector3(_speed * Time.fixedDeltaTime, 0, 0);
+        //_camera.transform.Rotate(0, 0, 0);
     }
     private void OnEnable()
     {

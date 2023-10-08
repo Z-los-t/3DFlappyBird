@@ -1059,8 +1059,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jump: 10
+  _speed: 10
   _rotationSpeed: 45
-  _force: 5
+  _jumpSpeed: 5
+  _camera: {fileID: 330585543}
   _rb: {fileID: 0}
   Roadspawner: {fileID: 564589718}
   _frightenedeyes: {fileID: 5161495650902744820}
