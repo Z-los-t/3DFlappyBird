@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _frightenedeyes;
     [SerializeField] private GameObject _eyes;
 
-    float rotation;
+    float Rotation;
+    float CameraRotation;
     private void Awake()
     {
         _input = new PlayerInputControls();
@@ -44,9 +45,9 @@ public class PlayerController : MonoBehaviour
     private void PlayerMovement()
     {
         transform.position += new Vector3(_speed * Time.fixedDeltaTime, 0, 0);
-        rotation = _rb.velocity.y * _rotationSpeed;
-        rotation = Mathf.Clamp(rotation, -90, 50);
-        transform.rotation = Quaternion.Euler(0, 0, rotation);
+        Rotation = _rb.velocity.y * _rotationSpeed;
+        Rotation = Mathf.Clamp(Rotation, -90, 50);
+        transform.rotation = Quaternion.Euler(0, 0, Rotation);
     }
     private void JumpForceContol()
     {
@@ -58,7 +59,6 @@ public class PlayerController : MonoBehaviour
     private void CameraTranslate()
     {
         _camera.transform.position += new Vector3(_speed * Time.fixedDeltaTime, 0, 0);
-        //_camera.transform.Rotate(0, 0, 0);
     }
     private void OnEnable()
     {
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        Roadspawner.Spawner();
+        Roadspawner.Spawn();
     }
     private void OnCollisionEnter(Collision collision)
     {
