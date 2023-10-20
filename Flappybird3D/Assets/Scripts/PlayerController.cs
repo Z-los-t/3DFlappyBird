@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     [Header("Bird")]
     [SerializeField] private GameObject _frightenedeyes;
     [SerializeField] private GameObject _eyes;
-
+    [Header("Particle")]
+    [SerializeField] private GameObject jumpParticle;
     float Rotation;
     float CameraRotation;
     private void Awake()
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
         _rb.useGravity = true;
         _rb.velocity = Vector3.zero;    
         _rb.velocity = Vector2.up * _jump;
+        Instantiate(jumpParticle, transform.position, Quaternion.identity);
     }
     private void PlayerMovement()
     {
